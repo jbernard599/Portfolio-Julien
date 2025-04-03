@@ -1188,6 +1188,10 @@ select.portfolio-filter-mobile {
   height: 90px;
   width: 90px;
 }
+.testimonial-item .thumb img {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
 .testimonial-item .subtitle {
   color: #8B88B1;
   font-size: 14px;
@@ -2415,7 +2419,7 @@ body {
   }
   .parallax .p10 {
     top: 45%;
-    right: 10%;
+    right: 20%;
   }
   .parallax .p11 {
     bottom: 10%;
@@ -2447,4 +2451,68 @@ body {
 
 .hidden {
     display: none;
+}
+
+/* PDF Cards */
+.pdf-card {
+    background: #302f4e;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.pdf-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.pdf-card h4 {
+    margin: 0;
+    color: #fff;
+    font-size: 18px;
+}
+
+.pdf-card .pdf-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FF4C60;
+    font-size: 24px;
+}
+
+.pdf-card .meta {
+    color: #8b88b1;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+@-webkit-keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
 }
