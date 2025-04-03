@@ -390,4 +390,28 @@ $(function(){
         }, 400);
     });
 
+    // Projects Load More functionality
+    const projectItems = $('.project-item');
+    const itemsToShow = 6;
+    let currentlyShown = itemsToShow;
+
+    // Hide all items beyond the initial count
+    projectItems.slice(itemsToShow).hide();
+
+    // Add load more button if there are more items
+    if (projectItems.length > itemsToShow) {
+        $('.projects-wrapper').after('<div class="text-center mt-4"><button id="loadMore" class="btn btn-default">Voir plus</button></div>');
+    }
+
+    // Load more button click handler
+    $('#loadMore').on('click', function() {
+        const hiddenItems = projectItems.filter(':hidden');
+        hiddenItems.slice(0, itemsToShow).fadeIn();
+        currentlyShown += itemsToShow;
+
+        // Hide button if no more items
+        if (currentlyShown >= projectItems.length) {
+            $(this).fadeOut();
+        }
+    });
 });
